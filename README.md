@@ -2,7 +2,7 @@
 Exploring denver crime data from the denvergov opendata platform
 
 ## Table of Contents
-1. [Dataset](#dataset:-crime)
+1. [Dataset](#dataset-crime)
 2. [EDA](#exploratory-data-analysis)
 3. [Changes Over Years](#changes-over-years)
 
