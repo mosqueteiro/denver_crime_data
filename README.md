@@ -123,6 +123,7 @@ Using a two-tailed hypothesis test with an overall significance level of 0.05, t
 
 **Monthly Comparison**
 
+
 | test    |     t     |      p   |  Reject Null|
 |     ---:|  ---    |  ---   |: ---        |
 |2014-2015| -4.15     | 0.001    |        True |
@@ -140,6 +141,7 @@ Using a two-tailed hypothesis test with an overall significance level of 0.05, t
 Average daily crimes per year are also compared. Again we see evidence that 2014 is significantly different from the other years. Interestingly, there is also evidence that average daily crime is significantly lower in 2015 vs 2017 and 2018. This suggests that the total daily crime increased in between 2015 and 2017. These comparisons do not take into account population which if there was a population increase could account for an increase in crime.
 
 **Daily Comparison**
+
 
 |test   |        t  |       p    | Reject Null |
 |      ---:|:  ---    :|:  ---     :|: ---     |
