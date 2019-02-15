@@ -125,16 +125,16 @@ Using a two-tailed hypothesis test with an overall significance level of 0.05, t
 
 |test  |       t   |      p   |  Reject Null  |
 |  ---:|:  ---    :|:  ---   :|: ---          |
-|2014_2015| -4.15     | 0.001    |        True |
-|2014_2016| -3.83     | 0.002    |        True |
-|2014_2017| -6.52     | 0.000    |        True |
-|2014_2018| -5.41     | 0.000    |        True |
-|2015_2016| -1.45     | 0.173    |       False |
-|2015_2017| -3.23     | 0.007    |       False |
-|2015_2018| -3.25     | 0.007    |       False |
-|2016_2017| -1.33     | 0.210    |       False |
-|2016_2018| -1.44     | 0.175    |       False |
-|2017_2018| -0.00     | 0.997    |       False |
+|2014-2015| -4.15     | 0.001    |        True |
+|2014-2016| -3.83     | 0.002    |        True |
+|2014-2017| -6.52     | 0.000    |        True |
+|2014-2018| -5.41     | 0.000    |        True |
+|2015-2016| -1.45     | 0.173    |       False |
+|2015-2017| -3.23     | 0.007    |       False |
+|2015-2018| -3.25     | 0.007    |       False |
+|2016-2017| -1.33     | 0.210    |       False |
+|2016-2018| -1.44     | 0.175    |       False |
+|2017-2018| -0.00     | 0.997    |       False |
 
 
 Average daily crimes per year are also compared. Again we see evidence that 2014 is significantly different from the other years. Interestingly, there is also evidence that average daily crime is significantly lower in 2015 vs 2017 and 2018. This suggests that the total daily crime increased in between 2015 and 2017. These comparisons do not take into account population which if there was a population increase could account for an increase in crime.
@@ -143,16 +143,16 @@ Average daily crimes per year are also compared. Again we see evidence that 2014
 
 |test   |        t  |       p    | Reject Null |
 |      ---:|:  ---    :|:  ---     :|: ---     |
-|2014_2015 | -6.50     | 2.51e-10   |      True|
-|2014_2016 | -7.99     | 1.78e-14   |      True|
-|2014_2017 |-11.92     | 6.63e-28   |      True|
-|2014_2018 |-11.49     | 2.74e-26   |      True|
-|2015_2016 | -2.21     | 2.76e-02   |     False|
-|2015_2017 | -4.94     | 1.17e-06   |      True|
-|2015_2018 | -4.71     | 3.37e-06   |      True|
-|2016_2017 | -2.36     | 1.85e-02   |     False|
-|2016_2018 | -2.22     | 2.63e-02   |     False|
-|2017_2018 | -0.00     | 9.97e-01   |     False|
+|2014-2015 | -6.50     | 2.51e-10   |      True|
+|2014-2016 | -7.99     | 1.78e-14   |      True|
+|2014-2017 |-11.92     | 6.63e-28   |      True|
+|2014-2018 |-11.49     | 2.74e-26   |      True|
+|2015-2016 | -2.21     | 2.76e-02   |     False|
+|2015-2017 | -4.94     | 1.17e-06   |      True|
+|2015-2018 | -4.71     | 3.37e-06   |      True|
+|2016-2017 | -2.36     | 1.85e-02   |     False|
+|2016-2018 | -2.22     | 2.63e-02   |     False|
+|2017-2018 | -0.00     | 9.97e-01   |     False|
 
 
 
