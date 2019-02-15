@@ -16,25 +16,25 @@ Results
 ==================================================
 
 
-OFFENSE TYPE ID                 |   Count
-                            ---:|:---
-accessory-conspiracy-to-crime   |    136
-agg-aslt-police-weapon          |    293
-animal-cruelty-to               |    125
-criminal-trespassing            |  13989
-...                             |  ...
-disarming-a-peace-officer       |     27
-public-fighting                 |    852
-public-order-crimes-other       |   7489
-...                             |  ...
-reckless-endangerment           |    149
-traf-habitual-offender          |   3581
-traf-other                      |  30968
-...                             |   ...
-vehicular-eluding-no-chase      |   3409
-violation-of-court-order        |   2513
-violation-of-restraining-order  |   2780
-weapon-by-prev-offender-powpo   |   1379
+|OFFENSE TYPE ID                 |   Count|
+|                            ---:|:---|
+|accessory-conspiracy-to-crime   |    136|
+|agg-aslt-police-weapon          |    293|
+|animal-cruelty-to               |    125|
+|criminal-trespassing            |  13989|
+|...                             |  ...|
+|disarming-a-peace-officer       |     27|
+|public-fighting                 |    852|
+|public-order-crimes-other       |   7489|
+|...                             |  ...|
+|reckless-endangerment           |    149|
+|traf-habitual-offender          |   3581|
+|traf-other                      |  30968|
+|...                             |   ...|
+|vehicular-eluding-no-chase      |   3409|
+|violation-of-court-order        |   2513|
+|violation-of-restraining-order  |   2780|
+|weapon-by-prev-offender-powpo   |   1379|
 
 -= Monthly Comparison =-
      test  |       t   |      p   |  Reject_Null

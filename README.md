@@ -54,13 +54,13 @@ The column IS_CRIME is a categorical whether or not the incident is a crime. The
 ### Length of time between first and last occurrence
 Looking at the time between first and last occurrence shows that most of the incidents cover short time periods. About half of the incidents do not have a last occurrence date which could be interpreted as being singular events, however, more clarification with Denver police on reporting procedures is suggested. The other half of the entries that do have a last occurrence date have a rather large spread with 25th percentile being 22 minutes long, 50th percentile lasting 6 hours, and 75th percentile lasting 15.5 hours. There are a 39 entries that likely have incorrect dates recorded as the last occurrence date is before the first occurrence date. The longest lasting incident reported was a sexual assault that continued over a four year period.
 
-Percentile|         TIME DELTA
-     ----:|:---
-min       |      -1 days +04:00:00
-25%       |        0 days 00:22:00
-50%       |        0 days 06:00:00
-75%       |        0 days 15:30:00
-max       |     1609 days 23:00:00
+|Percentile|         TIME DELTA    |
+|     ----:|:---                   |
+|min       |      -1 days +04:00:00|
+|25%       |        0 days 00:22:00|
+|50%       |        0 days 06:00:00|
+|75%       |        0 days 15:30:00|
+|max       |     1609 days 23:00:00|
 
 
 ### Missing locations and sexual assault
@@ -84,6 +84,29 @@ District 7 is barely registering in crime counts compared to the other districts
 ![Crimes by district][district crime]
 
 
+The offense type table (tuncated) highlights some of the offense types represented in the _all-other-crimes_ category.
+
+|OFFENSE TYPE ID                 |   Count|
+|                            ---:|:---|
+|accessory-conspiracy-to-crime   |    136|
+|agg-aslt-police-weapon          |    293|
+|animal-cruelty-to               |    125|
+|criminal-trespassing            |  13989|
+|...                             |  ...|
+|disarming-a-peace-officer       |     27|
+|public-fighting                 |    852|
+|public-order-crimes-other       |   7489|
+|...                             |  ...|
+|reckless-endangerment           |    149|
+|traf-habitual-offender          |   3581|
+|traf-other                      |  30968|
+|...                             |   ...|
+|vehicular-eluding-no-chase      |   3409|
+|violation-of-court-order        |   2513|
+|violation-of-restraining-order  |   2780|
+|weapon-by-prev-offender-powpo   |   1379|
+
+
 ### Crime over time
 Plotting daily incident counts for all the years up through 2018 a fairly regular cyclical pattern emerges. Incidents start lower, rise through the spring, peak in the summer, and decline in the fall and winter. It would be interesting to compare temperature changes to crime rates as this cyclical trend suggests similar timescale as seasonal weather changes. An exponential weighted average helps to visualize the trends through the noisy peaks and valleys in the data.
 
@@ -92,47 +115,54 @@ Plotting daily incident counts for all the years up through 2018 a fairly regula
 It would be interesting to also insert markers of any major events, holidays, etc. Further analysis of the dates of the spikes and dips would be interesting as well. Likely that the correlate to specific events. Generally, there looks to be a subtle trend of increasing crime.
 
 ## Changes Over Years
-This dataset had 5 years of data plus data from the current year up to the date it was downloaded (2/11 in this case). Lets look at incidents by month, separating out the years. There is a clear cyclical pattern in the data. Incidents
+This dataset had 5 years of data plus data from the current year up to the date it was downloaded (2/11 in this case). Lets look at incidents by month, separating out the years. There is a clear cyclical pattern in the data. Incidents decrease to their low count in February and gradually increase over the year peaking in August. From there they decrease again as the year closes out. From the figure (_Crimes per Month_) The years look fairly similar, however, 2014 does look a bit lower than the rest.
 
 ![Crime over years][crime years]
 
+Using a two-tailed hypothesis test with an overall significance level of 0.05, the average crimes per month for each year is compared. From the monthly comparisons table we see, indeed there is evidence that 2014 is significantly different than the rest of the years. Also, all the other years likely, do not differ significantly. This suggest that total crime increased from 2014 to 2015 but has stayed the same since 2015.
 
--= Monthly Comparison =-
+**Monthly Comparison**
 
-test  |       t   |      p   |  Reject Null
-  ---:|:  ---    :|:  ---   :|: ---
-2014/2015| -4.15     | 0.001    |        True
-2014/2016| -3.83     | 0.002    |        True
-2014/2017| -6.52     | 0.000    |        True
-2014/2018| -5.41     | 0.000    |        True
-2015/2016| -1.45     | 0.173    |       False
-2015/2017| -3.23     | 0.007    |       False
-2015/2018| -3.25     | 0.007    |       False
-2016/2017| -1.33     | 0.210    |       False
-2016/2018| -1.44     | 0.175    |       False
-2017/2018| -0.00     | 0.997    |       False
+|test  |       t   |      p   |  Reject Null  |
+|  ---:|:  ---    :|:  ---   :|: ---          |
+|2014/2015| -4.15     | 0.001    |        True |
+|2014/2016| -3.83     | 0.002    |        True |
+|2014/2017| -6.52     | 0.000    |        True |
+|2014/2018| -5.41     | 0.000    |        True |
+|2015/2016| -1.45     | 0.173    |       False |
+|2015/2017| -3.23     | 0.007    |       False |
+|2015/2018| -3.25     | 0.007    |       False |
+|2016/2017| -1.33     | 0.210    |       False |
+|2016/2018| -1.44     | 0.175    |       False |
+|2017/2018| -0.00     | 0.997    |       False |
 
 
--= Daily Comparison =-
+Average daily crimes per year are also compared. Again we see evidence that 2014 is significantly different from the other years. Interestingly, there is also evidence that average daily crime is significantly lower in 2015 vs 2017 and 2018. This suggests that the total daily crime increased in between 2015 and 2017. These comparisons do not take into account population which if there was a population increase could account for an increase in crime.
 
-test   |        t  |       p    | Reject Null
-      ---:|:  ---    :|:  ---     :|: ---
-2014/2015 | -6.50     | 2.51e-10   |      True
-2014/2016 | -7.99     | 1.78e-14   |      True
-2014/2017 |-11.92     | 6.63e-28   |      True
-2014/2018 |-11.49     | 2.74e-26   |      True
-2015/2016 | -2.21     | 2.76e-02   |     False
-2015/2017 | -4.94     | 1.17e-06   |      True
-2015/2018 | -4.71     | 3.37e-06   |      True
-2016/2017 | -2.36     | 1.85e-02   |     False
-2016/2018 | -2.22     | 2.63e-02   |     False
-2017/2018 | -0.00     | 9.97e-01   |     False
+**Daily Comparison**
+
+|test   |        t  |       p    | Reject Null |
+|      ---:|:  ---    :|:  ---     :|: ---     |
+|2014/2015 | -6.50     | 2.51e-10   |      True|
+|2014/2016 | -7.99     | 1.78e-14   |      True|
+|2014/2017 |-11.92     | 6.63e-28   |      True|
+|2014/2018 |-11.49     | 2.74e-26   |      True|
+|2015/2016 | -2.21     | 2.76e-02   |     False|
+|2015/2017 | -4.94     | 1.17e-06   |      True|
+|2015/2018 | -4.71     | 3.37e-06   |      True|
+|2016/2017 | -2.36     | 1.85e-02   |     False|
+|2016/2018 | -2.22     | 2.63e-02   |     False|
+|2017/2018 | -0.00     | 9.97e-01   |     False|
 
 
 
 
 ## Extras
 ### Future Explorations
+Looking at the normalized hourly sum of crime categories reveals some interesting trends. White collar crime spikes at 8:00 and 12:00, public disorder spikes between 15:00 and 17:00. Most other crimes reach their highest peaks late in the night. Further investigation into the time-dependence of different crimes would be very interesting.
+
+![hour norm][cate hour norm]
+
 Analyzing day of the week  is one are that hasn't been looked at in this analysis and should warrant an investigation. I would expect white collar crimes to be more prevalent during the work week while drug and alcohol crimes more prevalent at the end of the week and on weekends. Adding other datasets to this one could produce more insights and better comparisons such as population, income, demographics, and land area statistics to compare crime rates per capita against other socioeconomic conditions and potentially gain further insight into what statistics relate to eachother.
 
 
