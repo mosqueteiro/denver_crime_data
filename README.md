@@ -144,7 +144,7 @@ Average daily crimes per year are also compared. Again we see evidence that 2014
 
 
 |test   |        t  |       p    | Reject Null |
-|      ---:|:  ---    :|:  ---     :|: ---     |
+|       ---|    ---    |    ---     |  ---     |
 |2014-2015 | -6.50     | 2.51e-10   |      True|
 |2014-2016 | -7.99     | 1.78e-14   |      True|
 |2014-2017 |-11.92     | 6.63e-28   |      True|
