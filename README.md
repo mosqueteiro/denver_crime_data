@@ -7,11 +7,14 @@ Exploring denver crime data from the denvergov opendata platform
     * [Is crime?](#is-crime)
     * [Length of crimes](#length-of-time-between-first-and-last-occurrence)
     * [Missing locations and sexual assault](#-missing-locations-and-sexual-assault)
-    * [Most Frequent Crimes](#most-frequent-crimes)
 3. [EDA](#exploratory-data-analysis)
     * [Most frequent crimes](#most-frequent-crimes)
     * [Crimes by district](#crimes-by-district)
+    * [Crime over time](#crime-over-time)
 4. [Changes Over Years](#changes-over-years)
+5. [Extras](#extras)
+    * [Future Explorations](#future-explorations)
+    * [Data artifacts](#data-artifacts)
 
 
 ## Dataset: Crime
@@ -51,7 +54,13 @@ The column IS_CRIME is a categorical whether or not the incident is a crime. The
 ### Length of time between first and last occurrence
 Looking at the time between first and last occurrence shows that most of the incidents cover short time periods. About half of the incidents do not have a last occurrence date which could be interpreted as being singular events, however, more clarification with Denver police on reporting procedures is suggested. The other half of the entries that do have a last occurrence date have a rather large spread with 25th percentile being 22 minutes long, 50th percentile lasting 6 hours, and 75th percentile lasting 15.5 hours. There are a 39 entries that likely have incorrect dates recorded as the last occurrence date is before the first occurrence date. The longest lasting incident reported was a sexual assault that continued over a four year period.
 
-**table here**
+Percentile|         TIME DELTA
+     ----:|:---
+min       |      -1 days +04:00:00
+25%       |        0 days 00:22:00
+50%       |        0 days 06:00:00
+75%       |        0 days 15:30:00
+max       |     1609 days 23:00:00
 
 
 ### Missing locations and sexual assault
@@ -75,13 +84,64 @@ District 7 is barely registering in crime counts compared to the other districts
 ![Crimes by district][district crime]
 
 
+### Crime over time
+Plotting daily incident counts for all the years up through 2018 a fairly regular cyclical pattern emerges. Incidents start lower, rise through the spring, peak in the summer, and decline in the fall and winter. It would be interesting to compare temperature changes to crime rates as this cyclical trend suggests similar timescale as seasonal weather changes. An exponential weighted average helps to visualize the trends through the noisy peaks and valleys in the data.
+
+![Crime over Time][daily alltime]
+
+It would be interesting to also insert markers of any major events, holidays, etc. Further analysis of the dates of the spikes and dips would be interesting as well. Likely that the correlate to specific events. Generally, there looks to be a subtle trend of increasing crime.
+
 ## Changes Over Years
+This dataset had 5 years of data plus data from the current year up to the date it was downloaded (2/11 in this case). Lets look at incidents by month, separating out the years. There is a clear cyclical pattern in the data. Incidents
+
+![Crime over years][crime years]
+
+
+-= Monthly Comparison =-
+
+test  |       t   |      p   |  Reject Null
+  ---:|:  ---    :|:  ---   :|: ---
+2014/2015| -4.15     | 0.001    |        True
+2014/2016| -3.83     | 0.002    |        True
+2014/2017| -6.52     | 0.000    |        True
+2014/2018| -5.41     | 0.000    |        True
+2015/2016| -1.45     | 0.173    |       False
+2015/2017| -3.23     | 0.007    |       False
+2015/2018| -3.25     | 0.007    |       False
+2016/2017| -1.33     | 0.210    |       False
+2016/2018| -1.44     | 0.175    |       False
+2017/2018| -0.00     | 0.997    |       False
+
+
+-= Daily Comparison =-
+
+test   |        t  |       p    | Reject Null
+      ---:|:  ---    :|:  ---     :|: ---
+2014/2015 | -6.50     | 2.51e-10   |      True
+2014/2016 | -7.99     | 1.78e-14   |      True
+2014/2017 |-11.92     | 6.63e-28   |      True
+2014/2018 |-11.49     | 2.74e-26   |      True
+2015/2016 | -2.21     | 2.76e-02   |     False
+2015/2017 | -4.94     | 1.17e-06   |      True
+2015/2018 | -4.71     | 3.37e-06   |      True
+2016/2017 | -2.36     | 1.85e-02   |     False
+2016/2018 | -2.22     | 2.63e-02   |     False
+2017/2018 | -0.00     | 9.97e-01   |     False
 
 
 
 
+## Extras
+### Future Explorations
+Analyzing day of the week  is one are that hasn't been looked at in this analysis and should warrant an investigation. I would expect white collar crimes to be more prevalent during the work week while drug and alcohol crimes more prevalent at the end of the week and on weekends. Adding other datasets to this one could produce more insights and better comparisons such as population, income, demographics, and land area statistics to compare crime rates per capita against other socioeconomic conditions and potentially gain further insight into what statistics relate to eachother.
 
 
+
+
+### Data artifacts
+Initial exploration of of incident counts bout time revealed artifacts in the data possibly related to how the data gets recorded and rounded by some but not all entries. The cyclical nature of this results suggests a regular pattern due to how the data is recorded as it is unlikely that this pattern would represent how incidents are actually taking place.
+
+![time artifact][time artifacts]
 
 
 
@@ -95,3 +155,4 @@ District 7 is barely registering in crime counts compared to the other districts
 [crime time]: images/crime_time_day.jpg
 [cate hour]: images/crime_cate_hour.jpg
 [cate hour norm]: images/crime_cate_hour_norm.jpg
+[time artifacts]: images/time_artifacts.png
