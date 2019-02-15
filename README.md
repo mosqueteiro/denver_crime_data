@@ -125,7 +125,7 @@ Using a two-tailed hypothesis test with an overall significance level of 0.05, t
 
 
 | test    |     t     |      p   |  Reject Null|
-|     ---:|  ---    |  ---   |: ---        |
+|     ---|  ---    |  ---   | ---        |
 |2014-2015| -4.15     | 0.001    |        True |
 |2014-2016| -3.83     | 0.002    |        True |
 |2014-2017| -6.52     | 0.000    |        True |
