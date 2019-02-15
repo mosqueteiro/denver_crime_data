@@ -1,10 +1,14 @@
-# denver_crime_data
+# Denver Crime Data
 Exploring denver crime data from the denvergov opendata platform
 
+## Table of Contents
+1. [Dataset](#dataset:-crime)
+2. [EDA](#exploratory-data-analysis)
+3. [Changes Over Years](#changes-over-years)
 
 
-# Dataset: Crime
-Last updated 2/11/2019, [here](https://www.denvergov.org/opendata/dataset/city-and-county-of-denver-crime)
+## Dataset: Crime
+Last updated 2/11/2019, [updated dataset](https://www.denvergov.org/opendata/dataset/city-and-county-of-denver-crime)
 
 ### Description
 This dataset includes criminal offenses in the City and County of Denver for the previous five calendar years plus the current year to date. The data is based on the National Incident Based Reporting System (NIBRS) which includes all victims of person crimes and all crimes within an incident. The data is dynamic, which allows for additions, deletions and/or modifications at any time, resulting in more accurate information in the database. Due to continuous data entry, the number of records in subsequent extractions are subject to change. Crime data is updated Monday through Friday.
@@ -28,3 +32,10 @@ Crimes that are initially reported, but that are later determined not to have oc
 
 ### About Crime Locations
 Crime locations reflect the approximate locations of crimes but are not mapped to actual property parcels. Certain crimes may not appear on maps if there is insufficient detail to establish a specific, mappable location.
+
+
+## Exploratory Data Analysis
+
+
+
+## Changes Over Years
