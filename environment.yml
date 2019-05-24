@@ -1,0 +1,12 @@
+name: denver_crime
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - plotly
+  - dash
+  - dash-daq
